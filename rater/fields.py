@@ -12,6 +12,10 @@ class RatingConfigReferenceField(models.CharField):
 
     __metaclass__ = models.SubfieldBase
 
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('max_length', 255)
+        super(RatingConfigReferenceField, self).__init__(*args, **kwargs)
+
     def to_python(self, value):
         if isinstance(value, basestring) and value:
             return get_rating_config(value)
