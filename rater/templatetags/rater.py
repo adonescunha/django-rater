@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from registry import registry
+from django.template import Library
+from ..registry import registry
+
+
+register = Library()
 
 
 @register.filter
