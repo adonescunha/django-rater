@@ -18,3 +18,6 @@ class Rating(models.Model):
     config = RatingConfigReferenceField()
     value = models.IntegerField()
     message = models.TextField(null=True, blank=True)
+
+    class Meta:
+        app_label = 'rater'
